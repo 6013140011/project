@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,7 @@
                 </button>
                 <div class="menu-dropdown">                               
                   <ul class="nav-menu">
-                    <li><a href="/about">About</a></li>
+                    <li><a href="/">About</a></li>
                     <li><a href="/shop">Shop</a></li>
                     <li><a href="/menu">Menu</a></li>
                     <li><a href="/brew">Brew</a></li>

@@ -1,8 +1,39 @@
 
-<html>
-<body>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wombat Coffee Roasters</title>
+    
+    <link rel="stylesheet" href="css/listing2.css">
+    <link rel="stylesheet" href="css/listing3.css">
+    <link rel="stylesheet" href="css/listing5.css">
+    <link rel="stylesheet" href="css/listing7.css">
+    <link rel="stylesheet" href="css/listing8.css">
+    <link rel="stylesheet" href="css/listing9.css">
+    <link rel="stylesheet" href="css/listing10.css">
+</head>
+<header id="header" class="page-header">
+                <div class="title">
+                  <h1>Wombat Coffee Roasters</h1>
+                  <div class="slogan">We love coffee</div>
+                </div>
+        </header>
+<nav class="menu" id="main-menu">
+                <button class="menu-toggle" id="toggle-menu">             
+                  toggle menu
+                </button>
+                <div class="menu-dropdown">                               
+                  <ul class="nav-menu">
+                    <li><a href="/">About</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li><a href="/brew">Brew</a></li>
+                  </ul>
+                </div>
+                </nav>
     <div class="wrapper">
         <div class="checkout container">
 
@@ -13,7 +44,8 @@
                 </p>
             </header>
 
-            <form method="post" id="payment-form" action="{{ route('payment.make') }}" input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+            <form method="post" id="payment-form" action="{{ route('payment.make') }}">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <section>
                     <label for="amount">
                         <span class="input-label">Amount</span>
@@ -65,6 +97,6 @@
           });
         });
     </script>
-    <script src="javascript/demo.js"></script>
+    <script src="Js/demo.js"></script>
 </body>
 </html>

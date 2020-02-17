@@ -24,6 +24,11 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
-Route::post('/paymaent/make','PaymentsController@make')->name('payment.make');
+Route::get('/brew', function () {
+    return view('aom');
+});
+
+Route::post('/payment/make','PaymentsController@make')->name('payment.make');
+Route::get('/transaction/{id}', 'PaymentsController@transaction')->name('payment.transaction');
 
 

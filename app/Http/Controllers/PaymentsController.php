@@ -3,25 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Braintree_Transaction;
 
 class PaymentsController extends Controller
 {
-    public function transaction(Request $request){
+    public function make(Request $request) {
 
-    }
-    public function make(Request $request){
-        $amount = $request->input('amount');{}
-    
-            $nonce = $request->input('payment_method_nonce');
-            $result = Braintree_Transaction::sale([
-                    'amount' => $amount,
-                    'paymentMethodNonce' => $nonce,
-                    'options' => ['submitForSettlement' => True]
-                ]); 
-                
+        $amount = $request->input('amount');
+        $nonce = $request->input('payment_method_nonce');
+
+        $result = Braintree_Transaction::sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'options' => ['submitForSettlement' => True]
+        ]);
+
         if ($result->success || !is_null($result->transaction)) {
             $transaction = $result->transaction;
-            return redirect()->route('payment.transaction')->with('id', $transaction->id);;
+            return redirect()->route('payment.transaction', [
+                'id' => $transaction->id
+            ]);
          } else {
             $errorString = "";
          foreach($result->errors->deepAll() as $error) {
@@ -29,11 +30,13 @@ class PaymentsController extends Controller
                 }
                 session(['errors' => $errorString]);
                 return redirect()->route('/shop');
-                echo 'error';
          }
-         
-
     }
-    
 
+    public function transaction(Request $request) {
+        $transaction = Braintree_Transaction::find($request->id);
+        return view('transaction', [
+            'transaction' => $transaction
+        ]);
+    }
 }

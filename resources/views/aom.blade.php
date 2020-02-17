@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Menu</title>
+    <title>Brew</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wombat Coffee Roasters</title>
 
@@ -41,8 +41,8 @@
           </ul>
         </div>
         </nav>
-    <h4>Mocca</h4>
-    <img src="http://www.cafe-amazon.com/BackEnd/TempProducts/5cc8336ff7c443d78f0a8adc38d5cc5e.png" width="300" height="310">
+    <h4>Milk Green Tea</h4>
+    <img src="http://www.cafe-amazon.com/BackEnd/TempProducts/0080ba22e8a34700b18a7d9165819add.png" width="300" height="310">
     <br>
 
     <!-- Optional JavaScript -->
